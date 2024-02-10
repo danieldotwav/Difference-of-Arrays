@@ -13,7 +13,53 @@ int main() {
 	// answer[1] is a list of all distinct integers in nums2 which are not present in nums1.
 	// Note that the integers in the lists may be returned in any order.
 
+	// Test case 1: Some common elements
+	// Expected result: 
+	// 1 3 
+	// 4 6 
 	printLists(findDifference({ 1, 2, 3 }, { 2, 4, 6 }));
+
+	// Test case 2: No common elements
+	// Expected result:
+	// 7 8 9 
+	// 1 2 3 
+	printLists(findDifference({ 7, 8, 9 }, { 1, 2, 3 }));
+
+	// Test case 3: Identical arrays
+	// Expected result:
+	// (empty list)
+	// (empty list)
+	printLists(findDifference({ 1, 2, 3 }, { 1, 2, 3 }));
+
+	// Test case 4: One array is empty
+	// Expected result:
+	// (empty list)
+	// 1 2 3 
+	printLists(findDifference({}, { 1, 2, 3 }));
+
+	// Test case 5: Both arrays are empty
+	// Expected result:
+	// (empty list)
+	// (empty list)
+	printLists(findDifference({}, {}));
+
+	// Test case 6: Arrays with negative numbers
+	// Expected result:
+	// -1 -3 
+	// 2 3 
+	printLists(findDifference({ -1, -2, -3 }, { 2, -2, 3 }));
+
+	// Test case 7: Arrays with duplicate elements (to test the distinct property)
+	// Expected result:
+	// 1 3 
+	// 4 6 
+	printLists(findDifference({ 1, 2, 2, 3 }, { 2, 4, 4, 6 }));
+
+	// Test case 8: Larger range of numbers
+	// Expected result:
+	// 10 30 
+	// 40 60 
+	printLists(findDifference({ 10, 20, 30 }, { 20, 40, 60 }));
 
 	return 0;
 }
@@ -54,7 +100,6 @@ vector<vector<int>> findDifference(const vector<int>& nums1, const vector<int>& 
 	}
 
 	answer.push_back(uniqueNums);
-
 	return answer;
 }
 
