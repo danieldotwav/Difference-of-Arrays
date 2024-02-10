@@ -13,9 +13,7 @@ int main() {
 	// answer[1] is a list of all distinct integers in nums2 which are not present in nums1.
 	// Note that the integers in the lists may be returned in any order.
 
-
 	printLists(findDifference({ 1, 2, 3 }, { 2, 4, 6 }));
-
 
 	return 0;
 }
@@ -61,11 +59,23 @@ vector<vector<int>> findDifference(const vector<int>& nums1, const vector<int>& 
 }
 
 void printLists(const vector<vector<int>>& container) {
-	for (vector<int> subContainer : container) {
-		for (int element : subContainer) {
-			cout << element << " ";
-		}
-		cout << endl;
+	// Check if the entire vector of vectors is empty
+	if (container.empty()) {
+		cout << "The container is empty." << endl;
+		return; // Exit the function if the container is empty
 	}
-	cout << endl;
+
+	for (const vector<int>& subContainer : container) {
+		// Check if the current sub-vector is empty
+		if (subContainer.empty()) {
+			cout << "(empty list)" << endl; // Print a placeholder for an empty list
+		}
+		else {
+			for (int element : subContainer) {
+				cout << element << " ";
+			}
+			cout << endl; // Move to the next line after printing all elements in the sub-vector
+		}
+	}
+	cout << endl; // Extra line for separation between test cases or for clarity
 }
