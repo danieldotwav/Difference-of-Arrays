@@ -21,35 +21,42 @@ A simple, yet effective algorithm to find the differences between two sets of in
 
 ```cpp
 vector<vector<int>> findDifference(const vector<int>& nums1, const vector<int>& nums2) {
-    vector<vector<int>> answer;
-    unordered_set<int> nums1List;
-    unordered_set<int> nums2List;
+	vector<vector<int>> answer;
+	unordered_set<int> nums1List;
+	unordered_set<int> nums2List;
 
-    for (int element : nums1) {
-        nums1List.insert(element);
-    }
-    for (int element : nums2) {
-        nums2List.insert(element);
-    }
+	// First, place all values from the containers in separate lists
+	for (int element : nums1) {
+		nums1List.insert(element);
+	}
+	for (int element : nums2) {
+		nums2List.insert(element);
+	}
 
-    vector<int> uniqueNums;
-    for (int element : nums1List) {
-        if (nums2List.find(element) == nums2List.end()) {
-            uniqueNums.push_back(element);
-        }
-    }
+	// Next, for each element in nums1, determine if it exists in nums2
+	vector<int> uniqueNums;
+	for (int element : nums1List) {
+		// If the element is unique, add it to the vector
+		if (nums2List.find(element) == nums2List.end()) {
+			uniqueNums.push_back(element);
+		}
+	}
 
-    answer.push_back(uniqueNums);
-    uniqueNums.clear();
+	// Now store the unqiue numbers in set1
+	answer.push_back(uniqueNums);
 
-    for (int element : nums2List) {
-        if (nums1List.find(element) == nums1List.end()) {
-            uniqueNums.push_back(element);
-        }
-    }
+	// Reset containers and repeat for the numbers in set 2
+	uniqueNums.clear();
 
-    answer.push_back(uniqueNums);
-    return answer;
+	for (int element : nums2List) {
+		// If the element is unique, add it to the vector
+		if (nums1List.find(element) == nums1List.end()) {
+			uniqueNums.push_back(element);
+		}
+	}
+
+	answer.push_back(uniqueNums);
+	return answer;
 }
 ```
 
