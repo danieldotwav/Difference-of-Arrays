@@ -13,64 +13,34 @@ int main() {
 	// answer[1] is a list of all distinct integers in nums2 which are not present in nums1.
 	// Note that the integers in the lists may be returned in any order.
 
-	// Test case 1: Some common elements
-	// Expected result: 
-	// 1 3 
-	// 4 6 
+	cout << "Test case 1: Some common elements\n";
 	printLists(findDifference({ 1, 2, 3 }, { 2, 4, 6 }));
 
-	// Test case 2: No common elements
-	// Expected result:
-	// 7 8 9 
-	// 1 2 3 
+	cout << "Test case 2: No common elements\n";
 	printLists(findDifference({ 7, 8, 9 }, { 1, 2, 3 }));
 
-	// Test case 3: Identical arrays
-	// Expected result:
-	// (empty list)
-	// (empty list)
+	cout << "Test case 3: Identical arrays\n";
 	printLists(findDifference({ 1, 2, 3 }, { 1, 2, 3 }));
 
-	// Test case 4: One array is empty
-	// Expected result:
-	// (empty list)
-	// 1 2 3 
+	cout << "Test case 4: One array is empty\n";
 	printLists(findDifference({}, { 1, 2, 3 }));
 
-	// Test case 5: Both arrays are empty
-	// Expected result:
-	// (empty list)
-	// (empty list)
+	cout << "Test case 5: Both arrays are empty\n";
 	printLists(findDifference({}, {}));
 
-	// Test case 6: Arrays with negative numbers
-	// Expected result:
-	// -1 -3 
-	// 2 3 
+	cout << "Test case 6: Arrays with negative numbers\n";
 	printLists(findDifference({ -1, -2, -3 }, { 2, -2, 3 }));
 
-	// Test case 7: Arrays with duplicate elements (to test the distinct property)
-	// Expected result:
-	// 1 3 
-	// 4 6 
+	cout << "Test case 7: Arrays with duplicate elements (to test the distinct property)\n";
 	printLists(findDifference({ 1, 2, 2, 3 }, { 2, 4, 4, 6 }));
 
-	// Test case 8: Larger range of numbers
-	// Expected result:
-	// 10 30 
-	// 40 60 
+	cout << "Test case 8: Larger range of numbers\n";
 	printLists(findDifference({ 10, 20, 30 }, { 20, 40, 60 }));
 
-	// Test case 9: Arrays with extreme values
-	// Expected result:
-	// INT_MIN
-	// INT_MAX
+	cout << "Test case 9: Arrays with extreme values\n";
 	printLists(findDifference({ INT_MIN, 0 }, { 0, INT_MAX }));
 
-	// Test case 10: Arrays where all elements are the same
-	// Expected result:
-	// 1 
-	// 2 
+	cout << "Test case 10: Arrays where all elements are the same\n";
 	printLists(findDifference({ 1, 1, 1 }, { 2, 2, 2 }));
 
 	return 0;
