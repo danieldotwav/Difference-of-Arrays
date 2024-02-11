@@ -61,6 +61,18 @@ int main() {
 	// 40 60 
 	printLists(findDifference({ 10, 20, 30 }, { 20, 40, 60 }));
 
+	// Test case 9: Arrays with extreme values
+	// Expected result:
+	// INT_MIN
+	// INT_MAX
+	printLists(findDifference({ INT_MIN, 0 }, { 0, INT_MAX }));
+
+	// Test case 10: Arrays where all elements are the same
+	// Expected result:
+	// 1 
+	// 2 
+	printLists(findDifference({ 1, 1, 1 }, { 2, 2, 2 }));
+
 	return 0;
 }
 
